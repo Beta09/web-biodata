@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportPro: Farish Qusyairi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <div class="logo">
+            <span class="logo-text">SP <span class="accent">SportPro</span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#social" class="nav-link">Social</a></li>
+                <li id="settings-link"><a href="#settings" class="nav-link">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="category-pill">
+                        <span>PROFESSIONAL ATHLETE</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="first-name">Farish</span> <span class="last-name accent">Qusyairi</span>
+                    </h1>
+                    <p class="hero-description">
+                        Elite athlete specializing in sprinting and field athletics with over 8 years of competitive experience and multiple national championships.
+                    </p>
+                    <button class="btn btn-accent" id="learn-more-btn">Learn More</button>
+                </div>
+                <div class="hero-visual">
+                    <div class="athletic-circle">
+                        <span>ATHLETE</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title accent">About Me</h2>
+                <h3 class="sub-title">Elite Sprinter & Field Athlete</h3>
+                <p class="about-description">
+                    My specialties include 100m and 200m sprint events, long jump, and relay races. I'm passionate about inspiring the next generation of athletes through coaching and community programs.
+                </p>
+                
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <h3>12+</h3>
+                        <p>NATIONAL TITLES</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>5</h3>
+                        <p>SEA GAMES</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>3</h3>
+                        <p>COACHING CERT.</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>500+</h3>
+                        <p>TRAINING HOURS</p>
+                    </div>
+                </div>
+                
+                <div class="training-visual">
+                    <span>TRAINING</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Section -->
+        <section id="social" class="social-section">
+            <div class="container">
+                <h2 class="section-title accent">Connect With Me</h2>
+                <div class="social-grid">
+                    <div class="social-card">
+                        <div class="social-icon">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </div>
+                        <h3>TikTok</h3>
+                        <p>Behind-the-scenes training, workout tips, and athletic lifestyle content.</p>
+                        <a href="#" class="btn btn-tiktok follow-btn">Follow Me</a>
+                    </div>
+                    
+                    <div class="social-card">
+                        <div class="social-icon">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                        <h3>Instagram</h3>
+                        <p>Daily life, competition highlights, and motivational content for athletes.</p>
+                        <a href="#" class="btn btn-instagram follow-btn">Follow Me</a>
+                    </div>
+                    
+                    <div class="social-card">
+                        <div class="social-icon">
+                            <i class="fa-brands fa-strava"></i>
+                        </div>
+                        <h3>Strava</h3>
+                        <p>Track training activities, share workouts, and analyze performance metrics.</p>
+                        <a href="#" class="btn btn-strava follow-btn">Follow Me</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Settings Modal (Admin Page) -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content admin-container">
+            <div class="admin-form">
+                <h2>Admin Settings</h2>
+                
+                <!-- Login Form -->
+                <div id="login-form">
+                    <h3>Login</h3>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter password">
+                    </div>
+                    <button id="login-btn" class="btn btn-accent">Login</button>
+                    <div id="error-message"></div>
+                </div>
+                
+                <!-- Settings Form (Hidden by default) -->
+                <div id="settings-form" style="display: none;">
+                    <h3>Edit Content</h3>
+                    
+                    <h4>Hero Section</h4>
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" id="first-name" placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" id="last-name" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Short Description</label>
+                        <textarea id="hero-description" placeholder="Short description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Button Label</label>
+                        <input type="text" id="learn-more-label" placeholder="Button label">
+                    </div>
+                    
+                    <h4>About Me Section</h4>
+                    <div class="form-group">
+                        <label>Subtitle</label>
+                        <input type="text" id="about-subtitle" placeholder="Subtitle">
+                    </div>
+                    <div class="form-group">
+                        <label>Long Description</label>
+                        <textarea id="about-description" placeholder="Long description"></textarea>
+                    </div>
+                    
+                    <h4>Statistics</h4>
+                    <div class="stats-edit">
+                        <div class="stat-edit">
+                            <input type="text" id="stat1-value" placeholder="Value">
+                            <input type="text" id="stat1-label" placeholder="Label">
+                        </div>
+                        <div class="stat-edit">
+                            <input type="text" id="stat2-value" placeholder="Value">
+                            <input type="text" id="stat2-label" placeholder="Label">
+                        </div>
+                        <div class="stat-edit">
+                            <input type="text" id="stat3-value" placeholder="Value">
+                            <input type="text" id="stat3-label" placeholder="Label">
+                        </div>
+                        <div class="stat-edit">
+                            <input type="text" id="stat4-value" placeholder="Value">
+                            <input type="text" id="stat4-label" placeholder="Label">
+                        </div>
+                    </div>
+                    
+                    <h4>Social Media Links</h4>
+                    <div class="form-group">
+                        <label>TikTok URL</label>
+                        <input type="text" id="tiktok-url" placeholder="TikTok URL">
+                    </div>
+                    <div class="form-group">
+                        <label>Instagram URL</label>
+                        <input type="text" id="instagram-url" placeholder="Instagram URL">
+                    </div>
+                    <div class="form-group">
+                        <label>Strava URL</label>
+                        <input type="text" id="strava-url" placeholder="Strava URL">
+                    </div>
+                    
+                    <div class="button-group">
+                        <button id="save-btn" class="btn btn-accent">Save Changes</button>
+                        <button id="logout-btn" class="btn btn-secondary">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
