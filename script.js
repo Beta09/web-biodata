@@ -16,7 +16,11 @@ const learnMoreBtn = document.getElementById('learn-more-btn');
 const aboutSubtitleElement = document.querySelector('.sub-title');
 const aboutDescriptionElement = document.querySelector('.about-description');
 const statElements = document.querySelectorAll('.stat-box');
-const followBtns = document.querySelectorAll('.follow-btn');
+const followBtns = [
+    document.getElementById('tiktok-btn'),
+    document.getElementById('instagram-btn'),
+    document.getElementById('strava-btn')
+];
 
 // Admin credentials
 const ADMIN_USER = 'admin';
@@ -96,10 +100,15 @@ saveBtn.addEventListener('click', () => {
     statElements[3].querySelector('h3').textContent = stat4Value;
     statElements[3].querySelector('p').textContent = stat4Label;
     
-    // Update social media links
-    followBtns[0].href = tiktokUrl;
-    followBtns[1].href = instagramUrl;
-    followBtns[2].href = stravaUrl;
+        // Store URLs in data attributes and use onclick to navigate
+    followBtns[0].dataset.url = tiktokUrl;
+    followBtns[1].dataset.url = instagramUrl;
+    followBtns[2].dataset.url = stravaUrl;
+    
+    // Update onclick handlers
+    followBtns[0].onclick = () => window.open(tiktokUrl, '_blank');
+    followBtns[1].onclick = () => window.open(instagramUrl, '_blank');
+    followBtns[2].onclick = () => window.open(stravaUrl, '_blank');
     
     // Show success message
     alert('Changes saved successfully!');
@@ -108,9 +117,14 @@ saveBtn.addEventListener('click', () => {
 // Initially set default URLs for social media buttons
 document.addEventListener('DOMContentLoaded', () => {
     // Set default social media URLs (these can be changed by admin)
-    followBtns[0].href = 'https://www.tiktok.com/@default';  // TikTok
-    followBtns[1].href = 'https://www.instagram.com/default';  // Instagram
-    followBtns[2].href = 'https://www.strava.com/default';  // Strava
+    followBtns[0].dataset.url = 'https://www.tiktok.com/@default';  // TikTok
+    followBtns[1].dataset.url = 'https://www.instagram.com/default';  // Instagram
+    followBtns[2].dataset.url = 'https://www.strava.com/default';  // Strava
+    
+    // Set initial onclick handlers
+    followBtns[0].onclick = () => window.open(followBtns[0].dataset.url, '_blank');
+    followBtns[1].onclick = () => window.open(followBtns[1].dataset.url, '_blank');
+    followBtns[2].onclick = () => window.open(followBtns[2].dataset.url, '_blank');
 });
 
 // Load current content into form fields
